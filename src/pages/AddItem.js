@@ -7,11 +7,12 @@ function AddItem(props){
 	const [quantity, setQuantity] = useState(0);
 	const [description, setDescription] = useState('');
 
-    //for the custom alert
+    //state variables for the custom alert
     const [showAlert, setShowAlert] = useState(false);
     const [isValid, setIsValid] = useState(false);
 
-    //these handler functions will constantly update the value inside the state variables whenever there are changes made
+    //these handler functions will constantly update the values inside the state variables 
+    //whenever there are changes made
     function handleItemNameChange(event){
         setItemName(event.target.value);
     }
@@ -24,25 +25,29 @@ function AddItem(props){
         setDescription(event.target.value);
     }
 
-    //function responsible for creating a new item object and adding it to the itemArray
+    //this function is responsible for creating a new item object and adding it to the itemArray
     function addItem(){
         const quantityAsNum = Number(quantity);
         setShowAlert(true);
         if(itemName.trim().length === 0 || quantityAsNum <=  0 || description.trim().length === 0){
             setIsValid(false);
         }else{
+            setIsValid(true);
+
+            //creates a new item object
             const newItem =  {
                 itemName: itemName,
                 quantity: quantityAsNum,
                 description: description,
             };
-    
+            
+            //creates a new array and adds the items from previous state then concatenates the new item object
             props.setItems(i => [...props.itemArr, newItem]);
             
+            //sets back the default values for the inputs and the state variables 
             setItemName("");
             setQuantity(0);
             setDescription("");
-            setIsValid(true);
         }
     }
 

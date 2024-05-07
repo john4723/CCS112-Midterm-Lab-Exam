@@ -8,6 +8,7 @@ function Alert(props){
         //alert will change depending if the adding of items is successful or not
         if(props.isValid){
             return(
+                //item addition success alert
                 <div className="alert success card">
                     <div className='container-img'>
                         <img src={ksgStamp} className='image'/>
@@ -17,6 +18,7 @@ function Alert(props){
             );
         }else{
             return(
+                //item addition failed alert
                 <div className="alert fail card">
                     <div className='container-img'>
                         <img src={otrStamp} className='image'/>

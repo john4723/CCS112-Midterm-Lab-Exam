@@ -7,6 +7,7 @@ function Home(props){
     
     //function that will handle and assign changes in search bar input to the state variable
     function handleSearchChange(event){
+        //lower case in default for easier comparison later on
         setSearch(event.target.value.toLowerCase());
     }
 
@@ -21,10 +22,11 @@ function Home(props){
                 <h1 className='title'>List of Items</h1>
                 {
                     props.itemArr.filter((item)  => {
-                        //if search bar is empty, return the item for mapping 
-                        //else check if the current item's itemName property 
+                        //If search bar is empty, return the item for mapping.
+                        //Else check if the current item's itemName property 
                         //includes the inputted string in the search bar
-                        //before it is included in the mapping process
+                        //before it is included in the mapping process.
+                        //Lowercase for easier comparison
                         return search === '' ? item : item.itemName.toLowerCase().includes(search)
                     }).map((item, index) => 
                         //maps the items that passes through the filter 

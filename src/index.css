@@ -96,9 +96,9 @@ p{
 
 .card{
 	background-color: white;
-	border: 1px solid hsl(0, 0%, 80%);
+	border: 1px solid hsl(0, 0%, 69%);
 	border-radius: 10px;
-	box-shadow: 5px 5px 5px hsl(0, 0%, 80%);
+	box-shadow: 5px 5px 5px hsl(0, 0%, 69%);
 }
 
 .container-main{

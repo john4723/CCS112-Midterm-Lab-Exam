@@ -1,6 +1,6 @@
 
 function Item(props){
-    //simple layout to display the item and its properties
+    //simple layout for displaying the item and its properties
     return(
         <div className="container-item">
 
